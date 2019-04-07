@@ -21,7 +21,7 @@ function parseFile() {
 	let file = fileUpload.files[0];
 	console.log('---Hello '+file.name+'---');
 	Papa.parse(file, {
-		worker: true,
+		// worker: true,
 		header: false,
 		step: function(results, parser) {
 			console.log("Row data:", results.data);
