@@ -1,15 +1,34 @@
-# Nginx Redirect Generator {NRG}
+# 🚀 Nginx Redirect Generator {NRG} 🚀
 
-NRG was created to simplify and standardize the way that redirects are implimented in NGINX
+NRG was created to simplify and standardize the way that redirects are implimented in NGINX.
 
 ## 🌟 Features 🌟
 
 - import redirects from file
   - .txt
-  -
+  - .csv
+- default logic is used for generation
+  - Example: `rewrite ^/oldthing/?$ https://www.something.com/newthing/ permanent;`
 
-## Roadmap
+## ⚠️ Notes ⚠️
 
+- currently no custom logic
+- no .xlsx support "[Convert with this tool to .csv](https://cloudconvert.com/xlsx-to-csv)"
+- query strings are removed and not currently generated as location query redirects
+- large files will lock the browser "lets keep it below 10k rows 😉"
+
+## 🎉 Resources 🎉
+
+- [Spredsheet template for redirects](https://docs.google.com/spreadsheets/d/1ITXWUaH2-iTj7SQ0Kemz3gipDT2ldPBs2JK9bRK7haE/edit?usp=sharing)
+- [How to format NGINX redirects/rewrites](https://www.codesmite.com/article/clean-url-rewrites-using-nginx)
+- [.xlsx to .csv converter](https://cloudconvert.com/xlsx-to-csv)
+
+## 🚗 Roadmap 🚗
+
+- load test and ensure perf
+  - currently locks browser on 50k and 100k .csv
+  - perhaps use lodash for `generateRedirects()`
+  - add PapaParse Worker "may need to add source of PapaParse to repo for this"
 - add options menu
   - push out style menu
   - dark mode
@@ -35,3 +54,7 @@ NRG was created to simplify and standardize the way that redirects are impliment
     - allow for checkbox to not save current sheet
     - allow for private sheets "probably not...these should not be indexed anyway"
   - save sheet to .csv file "including options"
+  - button to check HTTP status of all destinations/targets
+    - [example for Google Sheets](https://medium.com/@the.benhawy/how-to-use-google-spreadsheets-to-check-for-broken-links-1bb0b35c8525)
+- create app for testing NGINX Config - [docker example](https://dev.to/simdrouin/validate-your-nginx-configuration-files-easily-with-docker-4ihi)
+  - perhaps create an app on [Zeit](https://zeit.co/) for this
