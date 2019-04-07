@@ -1,6 +1,6 @@
 # 🚀 Nginx Redirect Generator {NRG} 🚀
 
-NRG was created to simplify and standardize the way that redirects are implimented in NGINX.
+NRG *(pronounced "energy")* was created to simplify and standardize the way that redirects are implimented in NGINX.
 
 ## 🌟 Features 🌟
 
@@ -25,6 +25,7 @@ NRG was created to simplify and standardize the way that redirects are impliment
 
 ## 🚗 Roadmap 🚗
 
+- select all inside code will only select code
 - impliment [ClipboardJS](https://clipboardjs.com/) on generated redirects
 - load test and ensure perf
   - currently locks browser on 50k and 100k .csv
