@@ -1,18 +1,18 @@
 const fileUpload = document.getElementById('fileUpload');
 const btnSubmit = document.getElementById('submit');
 const redirectsArea= document.getElementById('redirectsArea');
-new ClipboardJS('.copy');
+const redirectsAreaCode= document.getElementById('redirectsAreaCode');
+// needed to define a space as the default delimiter as space separated txt files are common
+Papa.DefaultDelimiter = ' ';
 
 function parseOn() {
 	if (fileUpload.value) {
+		redirectsAreaCode.innerHTML = '';
 		parseFile();
 	} else {
 		alert('Please upload a file');
 	}
 }
-
-// Papa Parse config + extras
-Papa.DefaultDelimiter = ' ';
 
 function parseFile() {
 	console.log('---Starting gerneration function---');
@@ -21,8 +21,12 @@ function parseFile() {
 	let file = fileUpload.files[0];
 	console.log('---Hello '+file.name+'---');
 	Papa.parse(file, {
-		// delimiter: ' ',
+		worker: true,
 		header: false,
+		step: function(results, parser) {
+			console.log("Row data:", results.data);
+			console.log("Row errors:", results.errors);
+		},
 		skipEmptyLines: true,
 		complete: function(results) {
 			console.log(results);
@@ -30,7 +34,7 @@ function parseFile() {
 			console.log('---Beautiful redirects array---');
 			console.log(data);
 			generateRedirects(data);
-		}
+		},
 	});
 	btnSubmit.disabled = false;
 }
@@ -43,7 +47,7 @@ function generateRedirects(data) {
 		if (!o.endsWith('/')) {
 			o+='/';
 		}
-		// Url Constroctor takes a boolean for noTransform "do not transform to absolute URL"
+		// Url Constroctor takes a boolean for noTransform "do not transform to absolute URL?"
 		let d = new Url(data[i][1], true);
 		// console.log("row #"+i);
 		// console.log("origin = "+o);
@@ -51,6 +55,7 @@ function generateRedirects(data) {
 		let r = 'rewrite ^'+o+'?$ '+d+' permanent;';
 		nginxRedirects.push(r);
 		redirectsArea.append(r+'\n')
+		redirectsAreaCode.append(r+'\n')
 	}
 	// console.table(nginxRedirects);
 	// return nginxRedirects;

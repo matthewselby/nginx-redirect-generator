@@ -1,25 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>NGINX Redirects Generator</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize-css/normalize.min.css">
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-  <h1>Hello World</h1>
-  <label for="fileUpload">Upload your .txt or .csv file here</label>
-  <input type="file" name="File Upload" id="fileUpload" accept=".txt, .csv, .xls, .xlsx">
-  <button id="submit" onclick="parseOn()">Parse on!</button>
-  <hr>
-  <textarea id="redirectsArea" cols="120" rows="30"></textarea>
-  <button class='copy' data-clipboard-target="#redirectsArea">Copy to clipboard</button>
 
-  <script src="https://cdn.jsdelivr.net/npm/papaparse@4.6.3/papaparse.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/domurl@2.2.0/url.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
-  <script src="app.js"></script>
-</body>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>NGINX Redirects Generator</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize-css/normalize.min.css" />
+    <link rel="stylesheet"
+      href="https://cdn.jsdelivr.net/combine/npm/prismjs@1.16.0/plugins/line-numbers/prism-line-numbers.min.css,gh/PrismJS/prism-themes/themes/prism-xonokai.min.css" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <h1>Hello World</h1>
+    <label for="fileUpload">Upload your .txt or .csv file here</label>
+    <input type="file" name="File Upload" id="fileUpload" accept=".txt, .csv, .conf" />
+    <button id="submit" onclick="parseOn()">Parse on!</button>
+    <hr />
+    <textarea id="redirectsArea" cols="120" rows="30"></textarea>
+    <button class="copy" data-clipboard-target="#redirectsArea"> Copy to clipboard </button>
+    <pre class="line-numbers">
+    <code id="redirectsAreaCode" class="language-nginx"></code>
+  </pre>
+    <script src="https://cdn.jsdelivr.net/npm/papaparse@4.6.3/papaparse.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/domurl@2.2.0/url.min.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/combine/npm/prismjs@1.16.0,npm/prismjs@1.16.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+    <script src="app.js"></script>
+  </body>
+
 </html>
