@@ -50,7 +50,7 @@ function generateRedirects(data) {
 		// console.log("destination = "+d);
 		let r = 'rewrite ^'+o+'?$ '+d+' permanent;';
 		nginxRedirects.push(r);
-		redirectsArea.append(r+'\n')
+		// redirectsArea.append(r+'\n')
 		redirectsAreaCode.append(r+'\n')
 	}
 	// console.table(nginxRedirects);
