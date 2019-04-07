@@ -60,3 +60,7 @@ NRG was created to simplify and standardize the way that redirects are impliment
 - create app for testing NGINX Config - [docker example](https://dev.to/simdrouin/validate-your-nginx-configuration-files-easily-with-docker-4ihi)
   - perhaps create an app on [Zeit](https://zeit.co/) for this
 - may want to impliment my own form of syntax highlighting since we will know all syntax used
+
+## Changelog
+
+will start at 1.0.0
