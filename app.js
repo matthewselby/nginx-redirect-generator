@@ -23,10 +23,6 @@ function parseFile() {
 	Papa.parse(file, {
 		// worker: true,
 		header: false,
-		step: function(results, parser) {
-			console.log("Row data:", results.data);
-			console.log("Row errors:", results.errors);
-		},
 		skipEmptyLines: true,
 		complete: function(results) {
 			console.log(results);
@@ -34,7 +30,7 @@ function parseFile() {
 			console.log('---Beautiful redirects array---');
 			console.log(data);
 			generateRedirects(data);
-		},
+		}
 	});
 	btnSubmit.disabled = false;
 }
