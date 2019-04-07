@@ -25,6 +25,7 @@ NRG was created to simplify and standardize the way that redirects are impliment
 
 ## 🚗 Roadmap 🚗
 
+- impliment [ClipboardJS](https://clipboardjs.com/) on generated redirects
 - load test and ensure perf
   - currently locks browser on 50k and 100k .csv
   - perhaps use lodash for `generateRedirects()`
@@ -46,7 +47,7 @@ NRG was created to simplify and standardize the way that redirects are impliment
     - starting with carrot `^`
     - conditional trailing slash `/?`
     - stop at end of sting `$`
-    - 301 or 302 `permanent or redirect`
+    - 301 or 302 `permanent, redirect` + allow for all other NGINX options here `break, last, etc.`
     - add/ensure trailing slash in source URL
     - remove trailing slash
     - add global options for all checkboxes "apply to all"
@@ -58,3 +59,4 @@ NRG was created to simplify and standardize the way that redirects are impliment
     - [example for Google Sheets](https://medium.com/@the.benhawy/how-to-use-google-spreadsheets-to-check-for-broken-links-1bb0b35c8525)
 - create app for testing NGINX Config - [docker example](https://dev.to/simdrouin/validate-your-nginx-configuration-files-easily-with-docker-4ihi)
   - perhaps create an app on [Zeit](https://zeit.co/) for this
+- may want to impliment my own form of syntax highlighting since we will know all syntax used
