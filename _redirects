@@ -1,2 +1,4 @@
 http://ms-tools-nrg.netlify.com/* https://tools-nrg.matthewselby.com/:splat 301!
 /template https://docs.google.com/spreadsheets/d/1ITXWUaH2-iTj7SQ0Kemz3gipDT2ldPBs2JK9bRK7haE/edit#gid=1657677199 302
+/github https://github.com/matthewselby/nginx-redirect-generator 302
+/code https://github.com/matthewselby/nginx-redirect-generator 302
