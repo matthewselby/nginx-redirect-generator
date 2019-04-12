@@ -25,8 +25,11 @@ NRG *(pronounced "energy")* was created to simplify and standardize the way that
 
 ## 🚗 Roadmap 🚗
 
+Love this - https://mango-is.com/tools/csv-to-json/
+
 - select all inside code will only select code
 - impliment [ClipboardJS](https://clipboardjs.com/) on generated redirects
+  - [do this](https://webdesign.tutsplus.com/tutorials/copy-to-clipboard-made-easy-with-clipboardjs--cms-25086)
 - load test and ensure perf
   - currently locks browser on 50k and 100k .csv
   - perhaps use lodash for `generateRedirects()`
