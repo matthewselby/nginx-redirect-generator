@@ -61,6 +61,8 @@ Love this - https://mango-is.com/tools/csv-to-json/
   - save sheet to .csv file "including options"
   - button to check HTTP status of all destinations/targets
     - [example for Google Sheets](https://medium.com/@the.benhawy/how-to-use-google-spreadsheets-to-check-for-broken-links-1bb0b35c8525)
+    - [might be able to do this in the browser via Chai/Chai HTTP](https://github.com/chaijs/chai-http)
+      - this could have two tests - one to check if the status code matches and the other to check if the destination matches
 - create app for testing NGINX Config - [docker example](https://dev.to/simdrouin/validate-your-nginx-configuration-files-easily-with-docker-4ihi)
   - perhaps create an app on [Zeit](https://zeit.co/) for this
 - may want to impliment my own form of syntax highlighting since we will know all syntax used
